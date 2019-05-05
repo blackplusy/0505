@@ -101,7 +101,7 @@ e.部署ecshop网店项目
 	a.启动phpstudy软件相关服务
 	b.把下载后的项目文件解压
 	c.把解压完成后的文件夹复制到phpstudy的WWW文件夹下
-	d.浏览器访问http://locahost/ecshop根据提示安装
+	d.浏览器访问http://localhost/ecshop根据提示安装
 		数据库主机：localhost
 		端口号：   3306
 		用户名：   root
