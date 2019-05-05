@@ -1,0 +1,46 @@
+黑哥(HeyGor)
+tel:18028768679
+Q、W:914338492
+
+============================================
+1.常见的软件架构
+	ps        单机
+	支付宝     c/s  b/s
+	淘宝       c/s  b/s
+	微博       c/s  b/s
+	知乎		   c/s  b/s
+	微信       c/s  b/s
+	花瓣       b/s
+	吃鸡、农药 c/s
+	小红书     b/s  c/s
+	高德       c/s  b/s
+	快播       c/s  b/s
+a.单机软件
+	不需要网络就可以执行的应用程序
+	hackercon
+	defcon
+b.b/s架构软件
+	b:浏览器
+		IE      UC  360  百度  QQ  搜狗  edge
+		chrome  开发 
+		firefox 测试
+		safari  
+	s:服务器
+		性能特别牛逼的电脑
+c.c/s架构软件
+	c:客户端
+		pc端:    笔记本 台式 一体机
+		移动端：  ipad  手机 其他
+	s:服务器
+		性能特别牛逼的电脑
+2.b/s架构的后端
+a.前端
+	html  标记性 静态网页   html5  
+	css   样式表 结构美化   css3
+	js    javascript 动态(动画、交互)  框架
+	      java       后端开发
+	      jsp        java server page
+	ui    用户接口  美工(美化)
+b.后端
+	web服务器
+	数据库服务器
