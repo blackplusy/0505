@@ -196,4 +196,71 @@ f.数据库基础
 			3>删除列
 			需求:删除goods表中分类列
 			alter table goods drop column cate;
+		f5.约束
+			主键约束：列中的数据是唯一的，每张表中只能有一个，不能为空
+			唯一约束：列中的数据是唯一的，作为主键约束的补充，可以为空
+			非空约束：列中的数据不能为空
+			检查约束：列中的数据是否满足条件
+			外键(参考)约束：列中的数据依赖于另外一张表中的数据
+
+			注意:外键(参考)约束
+			1.被参考表的被参考列一定是存在
+			2.参考列和被参考列的数据类型必须一致
+			3.被参考列一定是主键约束
+
+			语法:
+			create table 表(
+				列  数据类型 primary key ,   #主键约束
+				列  数据类型 unique,         #唯一约束
+				列  数据类型 not null,       #非空约束
+				列  数据类型 check(检查条件), #检查约束
+				列  数据类型 references 被参考表(被参考列) #外键约束
+			)
+	g.SQL的分类
+		SQL:结构化查询语言，通常;表示语句结束
+		DDL:数据库定义语言   create alter drop truncate
+		DML:数据库操作语言   insert update delete
+		DCL:数据库控制语言   grant  revoke
+		DQL:数据库查询语言   select
+	h.数据的新增
+		注意:
+		字符类型数据需要加单引号
+		日期类型数据需要加单引号
+		数字类型数据直接使用
+		列和值的位置、数据类型要对应
+		h1.向表中指定列新增数据
+			语法:insert into 表(列1,列2....) values(值1,值2.....);
+			需求:向goods表中新增数据，商品名称是heygor，价格290
+			insert into goods(name,price) values('heygor',290);
+		h2.向表中所有列新增数据
+			语法:insert into 表 values(值1,值2.....);
+			需求:向goods表中新增数据，商品名称o8ma,价格291，出厂日期 2019-01-01
+			insert into goods values('o8ma',291,'2019-01-01');
+	i.数据的修改
+		字符类型数据需要加单引号
+		日期类型数据需要加单引号
+		数字类型数据直接使用
+		语法:update 表 set 列=值 where 条件;
+		注意：如果不加where条件，修改的是整张表中的列，如果增加where条件，修改的是指定行的列
+		需求:查询goods表中名字是heygor的价格修改为250
+		update goods set price=250 where name='heygor';
+		需求:修改goods表中所有商品价格为0
+		update goods set price=0;
+	j.数据的删除
+		delete   	DML，可以删除指定数据，删除数据可以找回
+		truncate    DDL，只能删除全表数据，删除数据无法找回
+		j1.delete
+			语法:delete from 表 where 条件;
+			注意:如果增加where条件删除的是指定行的数据，如果不加，删除整张表的数据
+			需求:删除goods表中名字为heygor的所有信息
+			delete from goods where name='heygor';
+			需求:删除goods表中所有信息
+			delete from goods;
+		j2.truncate
+			语法:truncate table 表;
+			需求:删除goods表中所有信息
+			truncate table goods;
 			
+
+
+
