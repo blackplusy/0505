@@ -1,5 +1,4 @@
 
-
 ============================================
 1.常见的软件架构
 	ps        单机
@@ -123,7 +122,7 @@ f.数据库基础
 			cassandra facebook
 	b.数据库基础
 		数据库分为2部分：数据库软件、数据库数据，常说的数据库是指数据
-		数据库事由表组成
+		数据库是由表组成
 		表是由数据组成
 	c.mysql的服务
 		mysql    客户端服务
@@ -149,4 +148,52 @@ f.数据库基础
 			2>设置环境变量(让系统能找到对应命令)
 				右键计算机--属性--高级--环境变量--系统变量--Path中添加mysql的bin文件夹路径
 				;D:\phpStudy\MySQL\bin--确定、确定、确定
-
+	e.mysql的基础命令
+		show databases;
+			查看当前有哪些数据库
+		select database();
+			查看当前数据库的名字
+		use test;
+			数据库切换为test
+		show tables;
+			查看当前数据库中有哪些表
+		select * from ecs_goods\G;
+			查看ecs_goods表中所有数据\G一般不加
+	f.表结构
+		表结构类似于表格，有行，有列，表头(列名)，表名
+		f1.数据类型
+			数据库层面约束列中的数据
+			字符    'abc' '123'   char  varchar
+			日期    '1986-01-01'  date
+			数字    123           int
+		f2.表结构的创建
+			语法： 
+			create table 表名 (
+				列、字段、表头  数据类型，
+				列             数据类型,
+				...
+			);
+			需求:创建表商品(goods),里面3个列，商品名称(name) 字符类型最多10个字符，价格(price) 数字类型，出厂日期（ddate） 日期类型
+			create table goods(
+				name  char(10),
+				price int,
+				ddate date
+			);
+			补充：查看表结构
+			desc 表名;
+			需求:查看goods表的表结构
+		f3.表结构的删除
+			语法:drop table 表名;
+			需求:删除商品表表结构
+			drop table goods;
+		f4.表结构的修改
+			1>增加列
+			需求:goods表中增加商品分类(cate) 字符类型，最多10个字符
+			alter table goods add cate char(10);
+			2>修改列
+			需求:修改goods表中分类的数据类型为int
+			alter table goods modify cate int;
+			3>删除列
+			需求:删除goods表中分类列
+			alter table goods drop column cate;
+			
