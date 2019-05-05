@@ -1,4 +1,5 @@
 
+
 ============================================
 1.常见的软件架构
 	ps        单机
@@ -86,7 +87,8 @@ d.集成工具
 		WWW： 存放网站项目的位置
 	b.检查服务
 		b1.检查进程
-			win+r--cmd--tasklist | find "httpd" 查看apache进程
+			win+r--cmd--
+			tasklist | find "httpd" 查看apache进程
 			tasklist   查看系统所有进程
 			|          管道，前面的输出作为后面的输入
 			find       搜索
@@ -95,7 +97,8 @@ d.集成工具
 		b2.检查端口
 			apache：80
 			mysql: 3306
-			win+r--cmd--netstat -an | find "3306"
+			win+r--cmd--
+			netstat -an | find "3306"
 			netstat -an 查看系统中所有端口信息
 e.部署ecshop网店项目
 	a.启动phpstudy软件相关服务
@@ -106,5 +109,44 @@ e.部署ecshop网店项目
 		端口号：   3306
 		用户名：   root
 		密码:      root
-
+f.数据库基础
+	a.常见数据库软件
+		关系型数据库
+			informix  IBM+HP 军、政、运、银  小机
+			db2       IBM    军、政、运、银  （3000w+6000w）X4
+			oracle    甲骨文  中大型公司
+			mysql     甲骨文  互联网公司
+			sqlserver 微软    
+		非关系型数据库
+			mongodb   大数据、爬虫
+			redis     缓存、消息队列   sina
+			cassandra facebook
+	b.数据库基础
+		数据库分为2部分：数据库软件、数据库数据，常说的数据库是指数据
+		数据库事由表组成
+		表是由数据组成
+	c.mysql的服务
+		mysql    客户端服务
+		mysqld   服务端服务
+		win+r--cmd   tasklist | find "mysqld"  检查mysqld服务是否正常启动
+		win+r--cmd   netstat -an | find "3306" 检查mysqld的端口是否正常
+		注意：mysql的端口是3306
+	d.登录mysql
+		d1.登录命令(打开命令提示符)
+			mysql              
+				没有设置密码时候使用
+			mysql -u root -p
+				管理员登录本地数据库 -u 是用户 -p是密码
+			mysql -h 127.0.0.1 -u root -p
+				管理员登录 IP地址为127.0.0.1的数据库 -h 目标地址(IP)
+			注意：127.0.0.1==localhost==电脑本机
+		d2.登录方式
+			1>进入到命令所在文件夹
+				11>进入到命令所在文件夹，地址栏中输入cmd
+				12>
+					d:
+					cd phpStudy\MySQL\bin
+			2>设置环境变量(让系统能找到对应命令)
+				右键计算机--属性--高级--环境变量--系统变量--Path中添加mysql的bin文件夹路径
+				;D:\phpStudy\MySQL\bin--确定、确定、确定
 
