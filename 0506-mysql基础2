@@ -243,3 +243,9 @@ https://dev.mysql.com/doc/index-other.html
 	source sakila-schema.sql;
 7.导入sakila-data.sql
 	source sakila-data.sql;
+问题:
+	查询以C开头的国家有哪些城市?
+	
+	查询客户表中名字为MARY的所在城市?
+
+	查询客户名字为MARY的所在国家?
