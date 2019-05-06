@@ -121,6 +121,33 @@ b.简单查询
 			select * from ecs_goods where shop_price>=2000 and shop_price<=3000;
 			需求:查询ecs_goods表中商品名称是KD876或者诺基亚的所有信息
 			select * from ecs_goods where goods_name='KD876' or goods_name='诺基亚';
+		3>区间
+			between...and...
+			区间是包括两个端点的，小在前，大在后
+			需求:查询ecs_goods表中本店售价范围2000和3000之间的所有信息
+			select * from ecs_goods where shop_price between 2000 and 3000;
+		4.模糊查询
+			当信息不完整时候使用，通常和字符类型一起使用
+			like
+			_    一个字符
+			%    任意个字符
+			需求:查询ecs_goods表中商品名称是诺基亚的所有信息
+			select * from ecs_goods where goods_name like '诺基亚%';
+			需求:查询ecs_goods表中商品名称是6结尾的所有信息
+			select * from ecs_goods where goods_name like '%6';
+			需求:查询ecs_goods表中商品名称是6个字符的所有信息
+			select * from ecs_goods where goods_name like '______';
+		5.空值查询（null）
+			空:没有任何数据类型，没有任何值，不能用于比较和运算，查询时候使用is null或者is not null
+			需求:查询ecs_goods表中suppliers_id非空的所有信息
+			select * from ecs_goods where suppliers_id is not null;
+			需求:查询ecs_goods表中suppliers_id为空的所有信息
+			select * from ecs_goods where suppliers_id is null;
+		6.在...里面
+			in 或者的关系
+			需求:查询ecs_goods表中商品名称是KD876或者诺基亚的所有信息
+			select * from ecs_goods where goods_name in ('KD876','诺基亚');
+
 c.图形工具(管理mysql)
 	mysql workbench
 	sqlyog(小海豚)
