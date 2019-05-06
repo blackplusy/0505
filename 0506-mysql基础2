@@ -1,0 +1,133 @@
+1.常见的软件架构
+	单机
+	b/s  浏览器/服务器
+	c/s  客户端/服务器
+		客户端:
+			pc端
+			移动端
+2.前端和后端
+	前端
+		html
+		css
+		js
+		ui
+	后端
+		操作系统
+		web服务器
+		数据库服务器
+3.常见的数据库软件
+	关系型数据库
+		oracle
+		mysql
+		sqlserver
+	非关系型数据库
+		mongodb
+		redis
+4.mysql基础
+	数据库:软件、数据
+	数据库是由表组成
+	表是由数据组成
+5.mysql的登陆
+	登陆命令
+		mysql -u root -p
+		mysql -h 192.168.6.187 -u root -p
+	登陆方式
+		进入到命令所在文件夹
+		设置环境变量
+6.mysql的基础命令
+	show databases;
+	select database();
+	use test;
+	show tables;
+	select * from ecs_goods;
+7.表结构
+	a.创建表
+	语法:create table 表(
+		列 数据类型 约束，
+		列 数据类型 约束,
+		。。。
+	);
+	b.删除表
+	语法:drop table 表;
+	c.修改表
+		增加列
+		alter table 表 add 列 数据类型 约束;
+		修改列
+		alter table 表 modify 列 数据类型 约束;
+		删除列
+		alter table 表 drop column 列;
+8.SQL分类
+	DDL:  create alter drop turncate
+	DML:  insert delete update
+	DCL：  grant revoke
+	DQL:  select
+
+9.数据的新增
+	向表中指定列新增数据
+	语法:insert into 表(列1，列2) values(值1，值2);
+	向表中所有列新增数据
+	语法:insert into 表 values(值1，值2....);
+
+10.数据的修改
+	语法:update 表 set 列=值 where 条件;
+
+11.数据的删除
+	truncate  DDL  表中所有数据  无法找回
+	delete    DML  指定数据      可以找回
+	delete语法:
+	delete from 表 where 条件 ;
+	truncate语法:
+	truncate table 表;
+
+========================================================================
+1.数据的查询
+a.查询分类
+	a1.简单查询
+	a2.多表查询
+	a3.子查询
+	a4.分组查询
+b.简单查询
+	语法:select 列 from 表 where 条件;
+	ecshop数据库的表结构
+	http://book.ecmoban.com/images/db.htm
+	查询可以查询指定行
+		需求:查询商品表中商品名称是KD876的所有信息
+		select * from ecs_goods where goods_name='KD876';
+	查询可以查询指定列
+		需求:查询商品表中所有的商品名称
+		select goods_name from ecs_goods;
+	查询指定行的列
+		需求:查询商品表中商品名称是KD876的本店售价
+		select shop_price from ecs_goods where goods_name='KD876';
+	注意:select后面from前面是和列相关的，where后面是和行相关
+	where条件
+		1>比较
+			>   大于
+			<   小于
+			=   等于
+			>=  大于等于
+			<=  小于等于
+			!=  不等于
+			<>  不等于
+			需求:查询ecs_goods表中本店售价高于3000的商品的所有信息
+			select * from ecs_goods where shop_price>3000;
+			需求:查询ecs_goods表中商品名称不是KD876的所有信息
+			select * from ecs_goods where goods_name<>'KD876';
+		2>关系
+			and  同时满足条件
+			or   满足一个条件即可
+			not  不满足条件
+			需求:查询ecs_goods表中本店售价范围2000和3000之间的所有信息
+			select * from ecs_goods where shop_price>=2000 and shop_price<=3000;
+			需求:查询ecs_goods表中商品名称是KD876或者诺基亚的所有信息
+			select * from ecs_goods where goods_name='KD876' or goods_name='诺基亚';
+c.图形工具(管理mysql)
+	mysql workbench
+	sqlyog(小海豚)
+	dbeaver
+	navicat
+
+
+
+
+
