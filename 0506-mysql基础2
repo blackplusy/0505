@@ -147,14 +147,54 @@ b.简单查询
 			in 或者的关系
 			需求:查询ecs_goods表中商品名称是KD876或者诺基亚的所有信息
 			select * from ecs_goods where goods_name in ('KD876','诺基亚');
-
 c.图形工具(管理mysql)
 	mysql workbench
 	sqlyog(小海豚)
 	dbeaver
 	navicat
 
-
-
+d.多表查询
+	当一张表无法满足条件时候使用多张表
+d1.笛卡尔积
+	两张表不做任何关联产生的数据，无效数据增加，数据量翻倍，为了避免此类情况，使用连接查询
+	select * from ecs_goods;
+	select * from ecs_category;
+	select * from ecs_goods,ecs_category;
+d2.连接查询(内联查询、左联查询、右联查询)
+	内联查询语法：
+	select 列 from 表1，表2 where 表1.列=表2.列;
+	select 列 from 表1 inner join 表2 on 表1.列=表2.列;	
+	关联的列
+		1.名字相同
+		2.作用相同
+		3.主外键关系
+	需求:查询商品名称是KD876的分类名称
+	1.分析列
+		商品名称
+		分类名称
+	2.分析表
+		商品名称   ecs_goods
+		分类名称   ecs_category
+	3.关联
+		select * from ecs_goods,ecs_category
+		where ecs_goods.cat_id=ecs_category.cat_id;
+	4.过滤
+		select cat_name from ecs_goods,ecs_category
+		where ecs_goods.cat_id=ecs_category.cat_id
+		and goods_name='KD876';
+	需求:查询分类名称是3G手机的商品名称有哪些？
+	1.分析列
+		分类名称
+		商品名称
+	2.分析表
+		商品名称   ecs_goods
+		分类名称   ecs_category
+	3.关联
+		select * from ecs_goods g,ecs_category c
+		where g.cat_id=c.cat_id;
+	4.过滤
+		select g.goods_name from ecs_goods g,ecs_category c
+		where g.cat_id=c.cat_id
+		and c.cat_name='3G手机';
 
 
