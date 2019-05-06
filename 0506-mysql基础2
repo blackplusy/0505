@@ -197,5 +197,49 @@ d2.连接查询(内联查询、左联查询、右联查询)
 		where g.cat_id=c.cat_id
 		and c.cat_name='3G手机';
 
-查询商品价格范围在2000和3000之间所有的商品的分类名称
-查询分类名称是3G手机并且商品名称以诺基亚开头的商品名称
+
+查询商品本店价格范围在2000和3000之间所有的商品的分类名称 
+1.分析相关的列
+	本店售价
+	分类名称
+2.分析列所在的表
+	shop_price  ecs_goods
+	cat_name    ecs_category
+3.为了避免产生笛卡尔积，关联2张表
+	select * from ecs_goods g,ecs_category c
+	where g.cat_id=c.cat_id;
+4.查找满足题目要求的数据，一定要是在已经关联的基础上查找
+	select distinct(c.cat_name) from ecs_goods g,ecs_category c
+	where g.cat_id=c.cat_id
+	and g.shop_price between 2000 and 3000;
+补充：
+	distinct  去重函数
+
+查询分类名称是3G手机并且商品名称以诺基亚开头的商品名称 
+1.
+	分类名称
+	商品名称
+2.
+	cat_name ecs_category
+	goods_name ecs_goods
+3.
+	select * from ecs_goods g,ecs_category c
+	where g.cat_id=c.cat_id;
+4.
+	select goods_name from ecs_goods g,ecs_category c
+	where g.cat_id=c.cat_id
+	and c.cat_name='3G手机'
+	and g.goods_name like '诺基亚%';
+
+sakila数据库的导入
+1.下载sakila数据库
+https://dev.mysql.com/doc/index-other.html
+2.解压下载的压缩包
+3.进入到解压的文件夹下
+4.地址栏中输入cmd
+5.登陆mysql数据库
+	mysql -u root -p
+6.导入sakila-schema.sql
+	source sakila-schema.sql;
+7.导入sakila-data.sql
+	source sakila-data.sql;
