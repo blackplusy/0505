@@ -62,3 +62,12 @@ delete from student where name='Betty';
 select cat_id from ecs_goods where goods_name like '诺基亚%';
 2.查询分类表中cat_id为上面查询出来结果的分类名称
 select cat_name from ecs_category where cat_id in (select cat_id from ecs_goods where goods_name like '诺基亚%');
+
+通过子查询完成以下练习：
+	查询以C开头的国家有哪些城市?
+
+
+	查询客户表中名字为MARY的所在城市?
+
+
+	查询客户名字为MARY的所在国家?
