@@ -1,0 +1,64 @@
+--1.jpg
+select * from test1 where department='计算机系' and place='北京';
+update test1 set department='信息学院' where department='计算机系';
+select t1.no,t1.name,t2.grade,t2.courses 
+from test1 t1,test2 t2
+where t1.no=t2.no
+and t2.grade>75;
+
+--2.jpg
+select s.name from student s,achievement a
+where s.id=a.id
+and a.mark>85;
+
+select count(id) from achievement 
+where mark>=90;
+
+insert into achievement values(7,80);
+
+update achievement set mark=87 where id=3;
+
+delete from student where name='Betty';
+delete from achievement where id=6;
+
+--4.jpg
+select s#,grade from sc where c#='C2';
+select sname from s where sname like 'D%';
+select  s.s#,s.sname from s,sc,c
+where s.s#=sc.s#
+and  sc.c#=c.c#
+and c.cname='Maths';
+select s# from sc where c# in ('C2','C4');
+
+=====================================================
+子查询
+一条SQL语句的执行依赖于另外一条SQL语句的执行结果
+需求:查询商品名称是KD876的分类名称
+1.分析列
+	商品名称
+	分类名称
+2.分析表
+	ecs_goods
+	ecs_category
+3.分析关联列
+	cat_id
+4.拆分
+	查询商品表中满足条件的cat_id
+	select cat_id from ecs_goods where goods_name='KD876'; --4
+	查询分类表中cat_id为上面查询出来结果的分类名称
+	select cat_name from ecs_category where cat_id=(select cat_id from ecs_goods where goods_name='KD876');
+注意：子查询可以用于查询中，也可以用于数据的新增，修改，删除
+--2.jpg
+3.insert into achievement values((select id from student where name='Robert'),80);
+4.update achievement set mark=87 where id=(select id from student where name='Rose');
+5.
+delete from achievement where id=(select id from student where name='Betty');
+delete from student where name='Betty';
+注意：子查询分为单行子查询和多行子查询
+单行子查询：查询子句中返回的结果是1个，查询时候可以使用等号和in
+多行子查询：查询子句中返回的结果是多个，查询时候使用in
+查询商品名称以诺基亚开头的所有分类名称
+1.查询商品表中满足条件的cat_id
+select cat_id from ecs_goods where goods_name like '诺基亚%';
+2.查询分类表中cat_id为上面查询出来结果的分类名称
+select cat_name from ecs_category where cat_id in (select cat_id from ecs_goods where goods_name like '诺基亚%');
