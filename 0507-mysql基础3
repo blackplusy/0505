@@ -200,5 +200,33 @@ and co.country like 'C%'
 group by co.country;
 
 
+排序和分页
+1.排序
+按照某个条件进行排列
+顺序
+	从小到大
+	order by 列;
+	order by 列 asc;
+逆序(倒序)
+	从大到小
+	order by 列 desc;
+语法：
+	select 列  from  表
+		where 条件
+			group by 分组条件
+				having 分组后过滤条件
+					order by 排序条件;
+需求:查询ecs_goods表中所有数据，按照本店售价顺序排列
+	select * from ecs_goods order by shop_price ;
+需求:查询ecs_goods表中所有数据，按照市场售价从大到小进行排列
+	select * from ecs_goods order by market_price desc;
+2.分页
+limit  a     查询表中数据前a行
+limit  a,b   查询表中数据a后面取b条数据
+需求:查询ecs_goods表中前5行数据
+select * from ecs_goods limit 5;
+需求:查询ecs_goods表中6-15行数据
+select * from ecs_goods limit 5,10;
+
 
 
