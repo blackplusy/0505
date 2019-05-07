@@ -65,9 +65,16 @@ select cat_name from ecs_category where cat_id in (select cat_id from ecs_goods 
 
 通过子查询完成以下练习：
 	查询以C开头的国家有哪些城市?
-
+	1.查询国家表中满足条件的country_id
+	2.查询城市表中country_id为上面查询出来结果的城市名称
 
 	查询客户表中名字为MARY的所在城市?
-
+	1.查询客户表中满足条件的address_id
+	2.查询地址表中adrress_id为上面查询出来结果的city_id
+	3.查询城市表中city_id为上面查询出来结果的城市名称
 
 	查询客户名字为MARY的所在国家?
+	1.查询客户表中满足条件的address_id
+	2.查询地址表中adrress_id为上面查询出来结果的city_id
+	3.查询城市表中city_id为上面查询出来结果的country_id
+	4.查询国家表中country_id为上面查询出来结果的国家名称
