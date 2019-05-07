@@ -163,21 +163,41 @@ select c.cat_name,count(g.goods_name) from ecs_goods g,ecs_category c
 where g.cat_id=c.cat_id
 group by c.cat_name having count(g.goods_name)>10;
 
-查询商品表中产品数量超过10的cat_id
-查询分类表中cat_id为上面查询出来结果的分类名称
+查询商品数量超过10的分类名称
 
-在sakila数据库中进行查询
+1.查询商品表中产品数量超过10的cat_id
+select cat_id  from ecs_goods group by cat_id having count(goods_name)>10;
+
+2.查询分类表中cat_id为上面查询出来结果的分类名称
+select cat_name from ecs_category where cat_id in (select cat_id  from ecs_goods group by cat_id having count(goods_name)>10);
+
 
 查询城市数量超过50的国家名称
+1.查询城市表中满足条件的country_id
+select country_id from city group by country_id having count(city)>50;
+2.查询国家表中country_id为上面查询出来结果的国家名称
+select country from country where country_id in (select country_id from city group by country_id having count(city)>50);
+
 
 查询city表中每个国家id对应多少个城市,要求显示城市数量,国家id?
+select country_id,count(city) from city group by country_id;
 
 查询每个国家有多少个城市,要求显示国家名称,城市数量?
+select co.country,count(c.city)  from city c,country co where c.country_id=co.country_id
+group by co.country;
 
 查询每个城市有多少个客户,要求显示城市名称,客户数量(计算*就可以)
 
-查询C开头的国家,每个国家有多少个城市
+select  c.city,count(*)  from city c,address a,customer cu
+where c.city_id=a.city_id
+and a.address_id=cu.address_id
+group by c.city;
 
+查询C开头的国家,每个国家有多少个城市
+select  co.country,count(c.city) from city c,country co
+where c.country_id=co.country_id
+and co.country like 'C%'
+group by co.country;
 
 
 
