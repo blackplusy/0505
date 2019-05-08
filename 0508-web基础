@@ -145,3 +145,44 @@ d.抓包
 			时间
 		响应体
 
+e.fiddler的断点调试
+	bpu  设置断点的页面
+	bpu http://127.0.0.1/ecshop/
+	bpu  取消断点调试
+
+
+	bpu http://127.0.0.1/ecshop/user.php
+	bpu
+3.java项目的环境配置
+a.jdk的安装配置
+	jdk:java的开发环境
+	jre:java的运行环境
+	1>下载jdk
+		注意:系统版本
+		win、linux、unix
+		x86   32位
+		x64   64位
+		开发用软件--jdk--xxx.exe
+		测试用软件--jdk--xxx.exe
+	2>安装jdk
+		傻瓜安装
+	3>设置环境变量
+		计算机--属性--高级--环境变量
+		1.系统变量中新建变量
+			变量名:JAVA_HOME
+			变量值:C:\Program Files\Java\jdk1.8.0_101   (jdk的安装路径)
+		2.系统变量中Path中添加
+			 ;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
+		3.系统变量中新建变量
+			变量名:CLASSPATH
+			变量值:.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar
+		4.确定--确定--确定
+		5.测试java是否安装配置完毕
+			win+r--cmd
+			java
+			javac
+			
+
+
+b.tomcat的安装配置
+c.tenorder项目的部署
