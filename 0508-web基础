@@ -201,3 +201,30 @@ b.tomcat的安装配置
 		浏览器访问
 			127.0.0.1:8080
 c.tenorder项目的部署
+	1.把tenorder项目解压
+	2.删除tomcat中的webapps中的所有文件
+	3.复制tenorder项目到tomcat的webapps中
+	4.启动phpstudy中的mysql服务
+	5.进入到tenorder文件夹中(进入到tenorder.sql所在文件夹)
+	6.导入tenorder.sql
+		a>tenorder文件夹地址栏中输入cmd
+		b>登陆mysql数据库
+			mysql -u root -p
+		c>创建数据库
+			create database ten;
+		d>数据库切换为ten
+			use ten;
+		e>导入tenorder.sql文件
+			source tenorder.sql;
+	7.根据设置修改数据库配置文件(参考安装教程)
+		tenorder\WEB-INF\classes\database.properties
+	8.重启tromcat
+		a>进入到tomcat的bin文件夹
+		b>执行shudown.bat
+		c>执行startup.bat
+	9.测试
+		浏览器输入127.0.0.1:8080/tenorder
+		浏览器输入127.0.0.1:8080/tenorder/admin
+		用户名:admin
+		密码:admin
+
