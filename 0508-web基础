@@ -69,7 +69,7 @@ f.数据库返回web服务器所请求的数据，整合资源后发回给浏览
 	c.端口  :80
 	d.虚拟目录  slamdunk
 	e.访问的文件 live.shtml
-	f.访问文件的参数
+	f.访问文件的参数 id=2019050828
 
 a.协议
 	一组规则规范
@@ -93,3 +93,55 @@ a.协议
 	302	  3开头，移动或者缓存(重定向)
 	404   4开头，客户端请求有问题
 	500   5开头，服务端有问题
+b.域名
+	FQDN(完全合格域名)
+	www.sina.com
+	shuai.heygor.com
+	DNS(域名解析服务器)
+	正向解析(域名--IP)
+		win+r--cmd--nslookup www.baidu.com
+		win+r--cmd--ping www.baidu.com
+	反向解析(IP--域名)
+		win+r--cmd--nslookup 14.215.177.38
+c.端口
+	区分应用层进程的标识
+	假如我需要在电脑中启动2个mysqld服务，其中一个修改端口
+	oracle					1521
+	mysql                   3306
+	apache/nginx/iis         80
+	tomcat                  8080
+	检查端口
+		win+r--cmd--netstat -an | find "80"
+d.抓包
+	d1.抓包实例
+	d2.抓包原理
+		中间人原理
+	d3.抓包工具
+		F12
+		fiddler
+		httpwatch
+		wireshark
+		burpsuite
+	d4.抓包数据
+		基础信息
+			文件名字
+			状态码
+			文件类型
+			参考页面
+			文件大小
+			加载时间
+		请求头
+			请求地址
+			请求方式
+			可以解析的文件类型
+			除文本外的压缩方式
+			语言
+			cookie
+			客户端信息
+		请求体
+		响应头
+			状态码
+			web服务器软件版本
+			时间
+		响应体
+
