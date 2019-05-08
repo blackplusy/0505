@@ -181,8 +181,23 @@ a.jdk的安装配置
 			win+r--cmd
 			java
 			javac
-			
-
-
 b.tomcat的安装配置
+	1.下载tomcat压缩包到D:
+	2.解压压缩包文件
+	3.tomcat文件夹简介
+		bin: 	  	存放命令
+		conf:		存放配置文件
+		lib:   		存放库文件的位置
+		logs:       存放日志
+		webapps:    存放项目的位置
+	4.启动服务
+		进入到tomcat的bin文件夹，执行
+		startup.bat
+	5.检查tomcat服务器
+		查看进程
+			win+r--cmd--taklist | find "java"
+		查看端口
+			win+r--cmd--netstat -an |find "8080"
+		浏览器访问
+			127.0.0.1:8080
 c.tenorder项目的部署
