@@ -1,0 +1,63 @@
+--2.png
+a.select count(*) from table1;
+b.
+select t2.家庭住址 from table1 t1,table2 t2
+where t1.学生id=t2.学生id
+and t1.姓名 like '张%'
+and t1.性别='女'
+order by t1.姓名;
+
+--4.png
+1.
+select xm,zkzh from tb_student where score>0 and score<5;
+select * from tb_student where xm='张三' and score=5;
+
+2.
+select c.成绩表  from 学生表 x,成绩表 c
+where x.准考证号=c.准考证号
+and  x.年龄 between 20 and 35
+order by x.准考证号 desc;
+
+--6.jpg
+create table user(
+	userid  int(11) primary key,
+	username varchar2(20) not null,
+	password varchar2(20) not null,
+	crtime  date not null
+);
+
+insert into user values(1002,'username','password','2015-01-01');
+
+--8.jpg
+create table store_information(
+	Name char(20) not null,
+	Sales int not null,
+	Date  date not null
+);
+
+alter table store_information add Memo char(20);
+
+alter table store_information rename column name to store_name;
+update store_information 
+set store_name=replace(store_name,'店','分店') 
+where store_name like '%店';
+
+select store_name,Date,avg(sales) from store_information
+group by store_name,Date;
+
+select store_name  from store_information group by store_name
+having sum(Sales)>1000000;
+
+
+=====================================================================================
+1.我们是怎样访问网站？
+a.浏览器中输入网址www.sina.com.cn
+b.系统中搜索hosts文件中是否有www.sina.com.cn对应的IP地址
+	hosts文件作用:临时替代域名解析(dns)
+	192.168.6.187   www.sina.com.cn
+c.如果在hosts文件中没有找到域名对应的IP地址，数据会通过网络传输给DNS服务器(域名--IP)
+d.dns服务器进行解析后，把请求数据发送给web服务器
+e.web服务器对请求进行分析(分析出我要什么)，发送请求发到数据库中(我到哪里取数据)
+f.数据库返回web服务器所请求的数据，整合资源后发回给浏览器
+
+2.
