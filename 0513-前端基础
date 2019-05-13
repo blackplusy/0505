@@ -1,0 +1,85 @@
+黑哥(HeyGor)
+wechat:		914338492
+qq:         914338492
+tel:        18028768679
+===================================================
+1.前端后端
+	a.前端
+		html   标记性语言	静态页面(在网站服务器上什么样，在网页上什么样)  html5(兼容性) 
+		css    样式表        结构美化                                    css3
+		js     javascript   动态页面(动画、交互)
+				  			框架(Jquery)
+			   java 	    后端
+			   jsp          java server page
+	b.后端
+		web服务器(整合资源)
+		数据库服务器(提供资源)
+2.访问网站的过程
+	a.打开浏览器，输入域名www.sina.com.cn
+	b.系统会到hosts文件中找到是否有网址对应的IP地址,如果有直接通过网络进行访问
+	c.网络会把网页请求发送给DNS服务器(域名解析：域名--IP)
+	d.网络把网页请求发送到DNS服务器解析出来的IP地址
+	e.请求到大web服务器后进行解析，把所需内容请求发送给数据库服务器
+	f.数据库服务器把所需内容发送回web服务器，web服务器进行整合
+	g.发回响应给浏览器
+3.URL(统一资源定位器)
+	http://sports.sina.com.cn:80/slamdunk/live.shtml?id=2019051328
+	a.协议   	http://
+	b.域名   	sports.sina.com.cn
+	c.端口   	80
+	d.虚拟目录  	slamdunk
+	e.访问的文件 live.shtml
+	f.访问的文件参数 id=2019051328
+a.协议
+	一组规则规范
+	http协议:超文本传输协议
+	http协议特点：无状态(彼此不记录过去的行为)
+	作用:规定了数据在网络传输中先传输什么后传输什么，怎样传输
+	超文本(富文本):有图有真相(声音、图像、视频)
+	普通文本
+	http协议的请求(怎样发送请求的数据)
+		get:  主要用于浏览,敏感(个人)信息显示在URl上,相对不安全
+		https://s.taobao.com/search?q=lv&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20190513&ie=utf8
+		https://s.taobao.com/search?q=zara&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20190513&ie=utf8
+		post: 主要用于提交,敏感信息显示在请求体中，相对安全
+		请求:请求头、请求体
+		响应:响应头、响应体
+	cookie&session
+		cookie		存放在客户端，验证机制，访问记录，用处:广告推荐
+		session     存放在服务端，验证机制，用处：用户验证，30分钟超时
+	状态码
+		200		2开头请求成功
+		302		3开头移动或者缓存(重定向)
+		404 	4开头客户端请求有问题
+		500 	5开头服务器有问题
+b.域名
+	FQDN(完全合格域名)
+	www.test.coom
+	heygor.zhensshuai.org
+	heygor.hangsome.tv
+	DNS(域名解析服务器)
+	正向解析 域名--IP
+		win+r--cmd--
+		nslookup www.baidu.com
+		ping www.baidu.com
+	反向解析 IP--域名
+		win+r--cmd--
+		nslookup 14.215.177.38
+c.端口
+	区分应用层进程标识
+	注意：电脑中需要安装2个mysql服务器，必须有一个要修改端口
+	OSI7层模型:
+		物联网传话表应用
+		物理
+		数据链路层
+		网络层
+		传输层
+		会话层
+		表示层
+		应用层
+	win查看端口
+		win+r--
+		netstat -an
+
+
+
