@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!-- 	border  		边框 通常1px
+	cellspacing		单元格之间距离
+	cellpadding     文字与单元格之间距离
+	align  			对齐方式
+		left        左
+		right		右
+		center 		居中
+	table使用align="center"让整个表格居中对齐
+	tr使用align="center"让表格中内容居中对齐
+	width			宽度
+	height			高度
+	bgcolor         背景颜色
+ -->
+ 	<table border="2px" bgcolor="skyblue" width="600px" height="800px" bordercolor="red" align="center">
+ 		<caption>我的课程表</caption>
+ 		<tr>
+ 			<!-- <td>星期一</td> -->
+ 			<th>星期一</th>
+ 			<td>星期二</td>
+ 			<td>星期三</td>
+ 			<td>星期四</td>
+ 			<td>星期五</td>
+ 		</tr>
+ 		<tr>
+ 			<td>语文</td>
+ 			<td>数学</td>
+ 			<td>英语</td>
+ 			<td>体育</td>
+ 			<td>瑜伽</td>
+ 		</tr>
+ 	</table>
+</body>
+</html>
