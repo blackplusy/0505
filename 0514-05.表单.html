@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!-- 	form表单
+	action  你要把表单提交到哪里(一般来说是提交到公司的后台地址)
+	method  表单提交的方式
+		get
+			1.数据会显示在URL地址栏上
+			2.安全性低
+			3.速度快
+			4.数据长度有限制
+		post
+			1.数据不会显示在URl地址栏上
+			2.安全性较高
+			3.速度较快
+			4.数据长度理论上没有限制
+	form是前端的最后一站，是后端的第一站
+		input    表单控件
+		type	 表单控件的类型
+		name     控件名字
+		value    控件的内容
+		id       js需要使用的东西 -->
+		<form action="register.action" method="get">
+		<div>
+			<!-- 文本框/明文框 -->
+			<!-- 记住用户名 -->
+			用户名：<input type="text" name="username">
+		</div>	
+		<div>
+			<!-- 密码框 -->
+			密码：<input type="password" name="passwd">
+		</div>	
+		<div>
+			性别：
+	<!-- 		单选框
+			单选框中name属性会将多个同名单选框变成一个group(组) -->
+			男：<input type="radio" name="sex" value="male">
+			女：<input type="radio" name="sex" value="female">
+			萨瓦迪卡:<input type="radio" name="sex" value="what">
+		</div>
+		<div>
+			<!-- 复选框 -->
+			爱好：
+			sing<input type="checkbox" name="hobby" value="0">
+			dance<input type="checkbox" name="hobby" value="1">
+			game<input type="checkbox" name="hobby" value="2">
+		</div>
+		<div>
+			<!-- 下拉框 -->
+			籍贯信息
+			<select name="sheng" id="sheng">
+				<option value="44">广东</option>
+				<option value="45">福建</option>
+				<option value="46">广西</option>
+				<option value="47">黑龙江</option>
+			</select>
+		</div>
+		
+		<div>
+			<!-- 普通按钮 -->
+			<input type="button" value="im a button">
+			<!-- 提交按钮 -->
+			<input type="submit">
+			<!-- 重置按钮 -->
+			<input type="reset">
+			<!-- 图片按钮 -->
+			<input type="image" src="1.gif">
+		</div>
+		
+		</form>
+
+</body>
+</html>
